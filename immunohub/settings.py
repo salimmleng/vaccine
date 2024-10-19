@@ -105,7 +105,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'immunohub.wsgi.application'
+WSGI_APPLICATION = 'immunohub.wsgi.app'
 
 
 # Database
