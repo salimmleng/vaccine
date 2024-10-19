@@ -107,35 +107,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'immunohub.wsgi.app'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # DATABASES = {
 #     'default': dj_database_url.config(
 #         default='postgresql://vaccine_r57a_user:2vLySWdDxlLzJIvrsvr4Gj4ddDzh8SbB@dpg-crm4e4jv2p9s73e8j4mg-a.oregon-postgres.render.com/vaccine_r57a',
         
 #     )
-# }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'postgres.ozsaiqosrvrwyelnqeqp',
-#         'PASSWORD': 'moslema@#7254',
-#         'HOST': 'aws-0-ap-southeast-1.pooler.supabase.com',
-#         'PORT': '6543'
-#     }
 # }
 
 
