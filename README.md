@@ -12,7 +12,7 @@ https://vaccination-management-wbw3.onrender.com/
 ### If you want to run the project locally please folllow these process 👇 
 
 1. ### Clone the repository:
-       git clone https://github.com/salimmleng/Vaccination-management.git
+       git clone https://github.com/salimmleng/vaccine.git
 2. ### Navigate to the project directory:
        cd project-name
 3. ### Install dependencies:
