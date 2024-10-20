@@ -32,9 +32,9 @@ https://vaccine-pi.vercel.app/
        Go to: http://127.0.0.1:8000/
 
 ### API Endpoints:
-1. ### Get all vaccines: https://vaccination-management-wbw3.onrender.com/api/vaccines/
-2. ### Get all hospitals: https://vaccination-management-wbw3.onrender.com/vaccine/api/available_hospitals/
-3. ### Get available dates: https://vaccination-management-wbw3.onrender.com/vaccine/api/available_dates/
+1. ### Get all vaccines: https://vaccine-pi.vercel.app/api/vaccines/
+2. ### Get all hospitals: https://vaccine-pi.vercel.app/vaccine/api/available_hospitals/
+3. ### Get available dates: https://vaccine-pi.vercel.app/vaccine/api/available_dates/
 
 ### For any questions or suggestions, feel free to reach out:
 ## Md.Salim Miah
