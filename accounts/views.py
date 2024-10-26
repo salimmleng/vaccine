@@ -18,6 +18,16 @@ from . import models
 
 User = get_user_model()
 
+
+class RegisteredUsersCount(APIView):
+   
+    def get(self, request):
+        users_count = User.objects.count()  # Count all users in the database
+        return Response({"registered_users": users_count})
+
+
+
+
 class UserRegistrationAPIView(APIView):
     serializer_class = serializers.RegistrationSerializer
     permission_classes = [AllowAny] 
@@ -36,6 +46,9 @@ class UserRegistrationAPIView(APIView):
             email.send()
             return Response("Check your mail for confirmation", status=201)
         return Response(serializer.errors, status=400)
+
+
+
 
 def activate(request, uid64, token):
     try:
@@ -75,39 +88,6 @@ class UserLogoutApiView(APIView):
         request.user.auth_token.delete()
         logout(request)
         return redirect('login')
-
-
-class UserProfileAPIView(APIView):
-    permission_classes = [IsAuthenticated]
-
-    def get(self, request):
-        user = request.user
-        if user.user_role == 'patient':
-            profile = models.PatientProfile.objects.get(user=user)
-            serializer = serializers.PatientProfileSerializer(profile)
-        elif user.user_role == 'doctor':
-            profile = models.DoctorProfile.objects.get(user=user)
-            serializer = serializers.DoctorProfileSerializer(profile)
-        else:
-            return Response({'error': 'Invalid role'}, status=400)
-        return Response(serializer.data)
-
-    def put(self, request):
-        user = request.user
-        if user.user_role == 'patient':
-            profile = models.PatientProfile.objects.get(user=user)
-            serializer = serializers.PatientProfileSerializer(profile, data=request.data)
-        elif user.user_role == 'doctor':
-            profile = models.DoctorProfile.objects.get(user=user)
-            serializer = serializers.DoctorProfileSerializer(profile, data=request.data)
-        else:
-            return Response({'error': 'Invalid role'}, status=400)
-           
-        
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=400)
 
 
 
