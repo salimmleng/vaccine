@@ -1,6 +1,6 @@
 
 from django.urls import path
-from .views import DoseListCreateView, DoseDetailView, AvailableHospitalListView, AvailableDatesListView,ReviewView
+from .views import DoseListCreateView, DoseDetailView, AvailableHospitalListView, AvailableDatesListView,ReviewView,payment
 
 urlpatterns = [
     path('api/doses/', DoseListCreateView.as_view(), name='dose-list-create'),
@@ -9,5 +9,6 @@ urlpatterns = [
     path('api/available_dates/', AvailableDatesListView.as_view(), name='available-dates-list'),
     path('reviews/', ReviewView.as_view(), name='review-create'),
     path('reviews/<int:vaccine_id>/', ReviewView.as_view(), name='review-create'),
+    path('payment/', payment, name='initiate_payment'),
 ]
 
