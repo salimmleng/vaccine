@@ -193,7 +193,7 @@ def payment(request):
         settings = {
             'store_id': 'vacci671f23287e323',
             'store_pass': 'vacci671f23287e323@ssl',
-            'issandbox': False
+            'issandbox': True
         }
 
         sslcz = SSLCOMMERZ(settings)
