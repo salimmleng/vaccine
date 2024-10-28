@@ -191,9 +191,9 @@ def payment(request):
         cus_phone = "01500000000"  
 
         settings = {
-            'store_id': 'quick671dd3dff0df1',
-            'store_pass': 'quick671dd3dff0df1@ssl',
-            'issandbox': True
+            'store_id': 'vacci671f23287e323',
+            'store_pass': 'vacci671f23287e323@ssl',
+            'issandbox': False
         }
 
         sslcz = SSLCOMMERZ(settings)
@@ -203,7 +203,7 @@ def payment(request):
             'total_amount': total_amount,
             'currency': "BDT",
             'tran_id': unique_transaction_id__generator(),
-            'success_url': "https://salimmleng.github.io/vaccine-management/support_us.html",
+            'success_url': "https://salimmleng.github.io/vaccine-management/index.html",
             'fail_url': "https://salimmleng.github.io/vaccine-management/support_us.html",
             'cancel_url': "https://salimmleng.github.io/vaccine-management/support_us.html",
             'emi_option': 0,
@@ -214,8 +214,8 @@ def payment(request):
             'cus_city': city,
             'cus_country': "Bangladesh",
             'shipping_method': "NO",
-            'product_name': "Food Items",
-            'product_category': "Food",
+            'product_name': "Vaccine",
+            'product_category': "vaccine",
             'product_profile': "general"
         }
 
