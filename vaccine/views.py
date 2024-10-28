@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.http import Http404
 from datetime import timedelta,datetime
+from django.shortcuts import render
 
 
 class DoseListCreateView(APIView):
@@ -203,9 +204,9 @@ def payment(request):
             'total_amount': total_amount,
             'currency': "BDT",
             'tran_id': unique_transaction_id__generator(),
-            'success_url': "https://salimmleng.github.io/vaccine-management/index.html",
-            'fail_url': "https://salimmleng.github.io/vaccine-management/support_us.html",
-            'cancel_url': "https://salimmleng.github.io/vaccine-management/support_us.html",
+            'success_url': "https://vaccine-pi.vercel.app/vaccine/success/",
+            'fail_url': "https://vaccine-pi.vercel.app/vaccine/fail/",
+            'cancel_url': "https://vaccine-pi.vercel.app/vaccine/cancel/",
             'emi_option': 0,
             'cus_name': full_name,
             'cus_email': email,
@@ -228,3 +229,16 @@ def payment(request):
             return JsonResponse({'error': 'Failed to create payment session'}, status=400)
     else:
         return JsonResponse({'error': 'Invalid request method'}, status=405)
+    
+
+@csrf_exempt
+def PaymentSuccessView(request):
+    return render(request, "success.html")
+
+@csrf_exempt
+def PaymentFailView(request):
+    return render(request, "fail.html")
+
+@csrf_exempt
+def PaymentCancelView(request):
+    return render(request, "cancel.html")
